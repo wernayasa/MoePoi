@@ -85,8 +85,8 @@
 */
 /*!************************************************
 * Name		: Moe Poi Landing Page
-* Version	: 1.0
-* Build		: 04/01/2024
+* Version	: 1.2
+* Build		: 14/10/2024
 * Website	: emissionhex.blogspot.com
 **************************************************/
 
@@ -346,7 +346,7 @@ Pay with Ethereum
   </a>
 </b:includable>
   </b:widget>
-  <b:widget id='ContactForm1' locked='false' title='Formulir Kontak' type='ContactForm' version='2' visible='true'>
+  <b:widget id='ContactForm1' locked='true' title='Formulir Kontak' type='ContactForm' version='2' visible='true'>
     <b:includable id='main'>
       <b:class name='fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800'/>
       <b:attr name='tabindex' value='-1'/>
@@ -368,30 +368,31 @@ Pay with Ethereum
     <b:includable id='content'>
   <div class='contact-form-widget mb-6'>
     <div class='form'>
+      <div class='contact-form-widget'>
+    <div class='form'>
       <form name='contact-form'>
         <p/>
-        <label class='block mb-2 text-sm font-medium text-gray-900 dark:text-white' expr:for='data:widget.instanceId + &quot;_contact-form-name&quot;'><data:contactFormNameMsg/></label>
-        <input class='contact-form-name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' expr:id='data:widget.instanceId + &quot;_contact-form-name&quot;' name='name' placeholder='Your name' size='30' type='text' value=''/>
-        <p/>
-        <label class='block mb-2 text-sm font-medium text-gray-900 dark:text-white' expr:for='data:widget.instanceId + &quot;_contact-form-email&quot;'><data:contactFormEmailMsg/> <span class='font-bold'>*</span></label>
-        <input class='contact-form-email bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' expr:id='data:widget.instanceId + &quot;_contact-form-email&quot;' name='email' placeholder='name@company.com' size='30' type='email' value=''/>
-         <label class='block mb-2 text-sm font-medium text-gray-900 dark:text-white' expr:for='data:widget.instanceId + &quot;_contact-form-email-message&quot;'><data:contactFormMessageMsg/> <span class='font-bold'>*</span></label>
-        <textarea class='contact-form-email-message block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' cols='25' expr:id='data:widget.instanceId + &quot;_contact-form-email-message&quot;' name='email-message' placeholder='Your message...' rows='5'/>
-        <p/>
+        <data:contactFormNameMsg/>
         <br/>
-        <input class='contact-form-button contact-form-button-submit text-white bg-blue-700 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block' expr:id='data:widget.instanceId + &quot;_contact-form-submit&quot;' expr:value='data:contactFormSendMsg' type='button'/>
+        <input class='contact-form-name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' expr:id='data:widget.instanceId + &quot;_contact-form-name&quot;' name='name' size='30' type='text' value=''/>
+        <p/>
+        <data:contactFormEmailMsg/> <span style='font-weight: bolder;'>*</span>
+        <br/>
+        <input class='contact-form-email bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' expr:id='data:widget.instanceId + &quot;_contact-form-email&quot;' name='email' size='30' type='text' value=''/>
+        <p/>
+        <data:contactFormMessageMsg/> <span style='font-weight: bolder;'>*</span>
+        <br/>
+        <textarea class='contact-form-email-message mb-4 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' cols='25' expr:id='data:widget.instanceId + &quot;_contact-form-email-message&quot;' name='email-message' rows='5'/>
+        <p/>
+        <input class='contact-form-button contact-form-button-submit inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800' expr:id='data:widget.instanceId + &quot;_contact-form-submit&quot;' expr:value='data:contactFormSendMsg' type='button'/>
         <p/>
         <div style='text-align: center; max-width: 222px; width: 100%'>
-          <p class='contact-form-error-message' expr:id='data:widget.instanceId + &quot;_contact-form-error-message&quot;' role='alert'/>
-          <p class='contact-form-success-message' expr:id='data:widget.instanceId + &quot;_contact-form-success-message&quot;' role='alert'/>
+          <p class='contact-form-error-message' expr:id='data:widget.instanceId + &quot;_contact-form-error-message&quot;'/>
+          <p class='contact-form-success-message' expr:id='data:widget.instanceId + &quot;_contact-form-success-message&quot;'/>
         </div>
       </form>
-      <p class='mb-2 text-sm text-gray-500 dark:text-gray-400'>
-      <a class='hover:underline' href='#'>info@company.com</a>
-   </p>
-   <p class='text-sm text-gray-500 dark:text-gray-400'>
-      <a class='hover:underline' href='#'>212-456-7890</a>
-   </p>
+    </div>
+  </div>
     </div>
   </div>
 </b:includable>
